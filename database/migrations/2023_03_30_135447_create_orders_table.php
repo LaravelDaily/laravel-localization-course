@@ -12,6 +12,7 @@ return new class extends Migration {
             $table->foreignId('user_id')->constrained();
             $table->date('ordered_at');
             $table->boolean('complete')->default(false);
+            $table->float('price')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

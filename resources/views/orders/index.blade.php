@@ -18,6 +18,7 @@
                             <th>User</th>
                             <th>Order Date</th>
                             <th>Product count</th>
+                            <th>Total</th>
                             <th>Completed</th>
                             <th>Actions</th>
                         </tr>
@@ -27,9 +28,10 @@
                             <tr>
                                 <td>{{ $order->id }}</td>
                                 <td>{{ $order->user->name }}</td>
-                                <td>{{ $order->order_date }}</td>
+                                <td>{{ \Carbon\Carbon::parse($order->ordered_at)->isoFormat('dddd, D MMMM YYYY') }}</td>
                                 <td>{{ $order->products_count }}</td>
                                 <td>{{ $order->completed ? 'Yes' : 'No' }}</td>
+                                <td>{{ formatCurrency($order->price) }}</td>
                                 <td>
                                     <a href="{{ route('orders.show', $order) }}">Show</a>
                                     <a href="{{ route('orders.edit', $order) }}">Edit</a>

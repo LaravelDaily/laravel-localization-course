@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-input-label for="ordered_at" :value="__('Order date')"/>
+                            <x-input-label for="ordered_at" :value="__('Ordered at')"/>
 
                             <x-text-input id="ordered_at" class="block mt-1 w-full" type="date" name="ordered_at"
                                           :value="old('ordered_at')"/>
