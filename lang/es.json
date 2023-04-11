@@ -65,5 +65,6 @@
   "Update your account's profile information and email address.": "Actualice la información de su cuenta y la dirección de correo electrónico.",
   "Verify Email Address": "Confirme su correo electrónico",
   "Whoops!": "¡Ups!",
-  "You are receiving this email because we received a password reset request for your account.": "Ha recibido este mensaje porque se solicitó un restablecimiento de contraseña para su cuenta."
+  "You are receiving this email because we received a password reset request for your account.": "Ha recibido este mensaje porque se solicitó un restablecimiento de contraseña para su cuenta.",
+  "{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages": "{0} No tienes nuevos mensajes|{1} Tienes 1 nuevo mensaje|[2,*] Tienes :count nuevos mensajes"
 }
