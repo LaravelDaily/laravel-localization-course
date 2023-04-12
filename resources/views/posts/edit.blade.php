@@ -29,34 +29,8 @@
                             @enderror
                         </div>
 
-                        @foreach(config('app.supportedLocales') as $locale)
-                            <fieldset class="border-2 w-full p-4 rounded-lg mb-4">
-                                <label>Text for {{ $locale }}</label>
-                                <div class="mb-4">
-                                    <label for="title[{{$locale}}]" class="sr-only">Title</label>
-                                    <input type="text" name="title[{{$locale}}]" id="title[{{$locale}}]"
-                                           placeholder="Title"
-                                           class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('title') border-red-500 @enderror"
-                                           value="{{ old('title.'. $locale, $post->translations->where('locale', $locale)->first()?->title) }}">
-                                    @error('title.'.$locale)
-                                    <div class="text-red-500 mt-2 text-sm">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                </div>
-                                <div class="">
-                                    <label for="post[{{$locale}}]" class="sr-only">Body</label>
-                                    <textarea name="post[{{$locale}}]" id="post[{{$locale}}]" cols="30" rows="4"
-                                              placeholder="Post"
-                                              class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('post'.$locale) border-red-500 @enderror">{{ old('post'.$locale, $post->translations->where('locale', $locale)->first()?->post) }}</textarea>
-                                    @error('post.'.$locale)
-                                    <div class="text-red-500 mt-2 text-sm">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                </div>
-                            </fieldset>
-                        @endforeach
+                        <livewire:post-content-per-language
+                            :post="$post"/>
 
                         <div class="mb-4">
                             <label for="publish_date" class="sr-only">Published at</label>
@@ -72,7 +46,7 @@
                         </div>
                         <div>
                             <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">
-                                Create
+                                Update
                             </button>
                         </div>
                     </form>
